@@ -145,7 +145,9 @@
     var slides = $$('.slide', hero), thumbs = $$('.thumb', hero);
     var track = $('.rail__track', hero), curEl = $('[data-cur]', hero), barEl = $('.rail__count', hero);
 
+    var introDone = false;
     var go = function (i) {
+      if (introDone) hero.classList.remove('intro');   /* задержка входа — только для первой загрузки */
       idx = (i + slides.length) % slides.length;
       slides.forEach(function (s, k) { s.classList.toggle('is-active', k === idx); });
       thumbs.forEach(function (t, k) { t.classList.toggle('is-active', k === idx); });
@@ -235,7 +237,8 @@
       }
     }
 
-    go(0); play();
+    go(0); introDone = true; play();
+    setTimeout(function () { hero.classList.remove('intro'); }, 2800);
     window.addEventListener('resize', function () { go(idx); });
 
     /* размер */
@@ -573,4 +576,5 @@
 
   observeReveal(document);
 })();
+
 

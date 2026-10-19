@@ -614,7 +614,8 @@ a.dymo:hover, button.dymo:hover { background: var(--y); color: var(--ink); text-
 .nav__list { animation: fall .7s .5s var(--ease) backwards; }
 .nav__tools { animation: fall .7s .6s var(--ease) backwards; }
 .logo { animation: stick .8s .35s var(--pop) backwards; }
-.slide.is-active { animation: slap .85s .95s var(--ease) backwards; }
+.slide.is-active { animation: slap .85s var(--ease) backwards; }
+.hero.intro .slide.is-active { animation-delay: .95s; }
 .hero__crumbs { animation: rise .7s .8s var(--ease) backwards; }
 .hero__title { animation: rise .8s .9s var(--ease) backwards; }
 .opts { animation: rise .7s 1.05s var(--ease) backwards; }
@@ -787,6 +788,7 @@ a.dymo:hover, button.dymo:hover { background: var(--y); color: var(--ink); text-
 .calm .card:hover, .calm .card:hover .card__media img, .calm .card:hover .card__blob, .calm .card--feature:hover .feat__model { transform: none; }
 .calm .card:hover .card__media img { transform: translate(-50%, -50%); }
 .calm .spray-cv { display: none; }
+
 
 
 
